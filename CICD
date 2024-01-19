@@ -5,15 +5,16 @@ pipeline {
         SONARQUBE_HOME = tool 'SonarQube'
     }
  stages {
-   stage('SonarQube Scan') {
+   stage('Quality Gate') {
             steps {
                 script {
-                    withSonarQubeEnv('SonarQube-Server') {
-                        // Execute the SonarQube Scanner
-                        sh "${SONARQUBE_HOME}/bin/sonar-scanner"
+                    // Execute SonarQube scanner
+                    withSonarQubeEnv('SonarQubeServer') {
+                        sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+                            -Dsonar.projectKey=test2 \
+                            -Dsonar.sources=./"
                     }
-                }
             }
         }
-    }
+     }
 }
