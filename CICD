@@ -14,7 +14,8 @@ pipeline {
                             -Dsonar.projectKey=test2 \
                             -Dsonar.sources=./"
                     }
-            }
-        }
-     }
+              }
+          }
+      }
+  }
 }
