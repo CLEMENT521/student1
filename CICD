@@ -11,7 +11,7 @@ pipeline {
                     // Execute SonarQube scanner
                     withSonarQubeEnv('SonarQube-Server') {
                         sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
-                            -Dsonar.projectKey=Test2 \
+                            -Dsonar.projectKey=test2 \
                             -Dsonar.sources=./ \
                             -Dsonar.login=squ_48d6f06e2871578c14321e72ad08fbc90fa19eed"                            
                     }
