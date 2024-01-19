@@ -13,7 +13,7 @@ pipeline {
                         sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
                             -Dsonar.projectKey=test2 \
                             -Dsonar.sources=./ \
-                            -Dsonar.login=your-sonar-token"                            
+                            -Dsonar.login=squ_657b469cd0e1c52687170913f87aa8dc3626d35a"                            
                     }
               }
           }
