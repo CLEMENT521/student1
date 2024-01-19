@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    environment {
+        SONARQUBE_HOME = tool 'SonarQube'
+    }
+ stages {
+   stage('SonarQube Scan') {
+            steps {
+                script {
+                    withSonarQubeEnv('SonarQubeServer') {
+                        // Execute the SonarQube Scanner
+                        sh "${SONARQUBE_HOME}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+    }
+}
